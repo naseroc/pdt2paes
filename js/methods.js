@@ -51,10 +51,13 @@ const poblarSelect = (tabla, selectId) => {
     select.innerHTML = opciones;
 }
 
+const ponerOpcionesEnSelect = (asignaturas) => {for (let asignatura in asignaturas){
+    poblarSelect(asignaturas[asignatura].tablaPdt2Paes, `${asignatura}-pdt-select`);
+}}
 
 
 crearSelect(asignaturas)
+ponerOpcionesEnSelect(asignaturas);
 
-for (let asignatura in asignaturas){
-    poblarSelect(asignaturas[asignatura].tablaPdt2Paes, `${asignatura}-pdt-select`);
-}
+
+let select = document.getElementById('mat-pdt-select');
